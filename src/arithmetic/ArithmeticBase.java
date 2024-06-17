@@ -15,26 +15,24 @@ import java.util.Scanner;
  */
 public class ArithmeticBase 
 {
-    
-    public enum Operation {
-        PLUS, MINUS, TIMES, DIVIDE
-    }
-
-    public double calculate(double x, double y, Operation operation) {
-        switch (operation) {
-            case PLUS:
+ public double x,y;
+    double calculate(double x, double y) 
+        {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter arithmetic operation to Perform: ");
+        String s= sc.next();
+        switch (s.toUpperCase()) 
+        {
+            case "PLUS":
                 return x + y;
-            case MINUS:
+            case "MINUS":
                 return x - y;
-            case TIMES:
+            case "TIMES":
                 return x * y;
-            case DIVIDE:
-                if (y == 0) {
-                    throw new IllegalArgumentException("Cannot divide by zero");
-                }
+            case "DIVIDE":
                 return x / y;
             default:
-                throw new AssertionError("Unknown operation " + operation);
+                throw new AssertionError("Unknown operations " + this);
         }
     }
    
